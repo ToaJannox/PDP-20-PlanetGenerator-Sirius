@@ -1,0 +1,70 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\title{Analyse des besoins}
+\author{W.\bsc{Daigremont}
+\and 
+T.\bsc{Guesdon}
+\and
+R.\bsc{Montferme}
+\and
+L.\bsc{Souvay}
+\and
+T.\bsc{Videau}}
+
+\date{Janvier 2020}
+
+
+\usepackage{graphicx}
+
+\begin{document}
+\nocite{*}
+\maketitle
+\tableofcontents
+
+\section{Introduction}\label{introduction}
+Dans le cadre du projet de programmation de l'année 2019-2020 nous avons rencontré David Renault nous ayant proposé son projet: \textit{Génération Procédurale de planètes sphériques} afin de plus amplement discuter du sujet et de ses attentes. \newline
+Suite à notre rencontre avec le client, nous avons pu identifier les besoins décrits dans ce document.
+
+\section{Besoins fonctionnels}\label{functionnal_needs}
+
+\subsection{Besoins principaux}\label{primary_fn}
+Notre client cherche à obtenir un logiciel permettant de visualiser des planètes et fournissant des outils pour manipuler cette visualisation, zoom, déplacement de la caméra, orientation de la caméra. Les planètes visualisées devront être générées procéduralement, c'est à dire générées par un algorithme ayant des composantes aléatoire. Le client attend à minima que les planètes générées possèdent un système imitant les plaques tectoniques de la planète terre, et par conséquent qu'elles possèdent des variations d'altitude sur leur surface. La méthode des diagrammes de Voronoï a été suggérée pour créer ces plaques tectoniques, sans être imposée pour autant. Le client nous a également fait part de plusieurs améliorations possibles qui seront détaillées dans la partie \ref{secondary_fn} Besoins secondaires ci-après. Est attendu également un système de sauvegarde des planètes, de préférence au format de fichier .txt.\\
+(Le client préfère qu'on s'attarde sur l'algortihme de rendu, pour faire quelque chose de beau, et de faire un rendu low-poly pour la création rapide de la planète, c'est-à-dire utiliser un nombre relativement faible de polygones pour générer une planète. Le client nous a conseillé de faire au moins 10 000 points pour créer notre planète et pouvoir ainsi évaluer les performances de notre application.)
+
+
+
+\subsection{Besoins secondaires}\label{secondary_fn}
+Les besoins secondaires décrit dans ce chapitre sont des besoins exprimés par le client comme étant souhaitable, mais pas indispensables, c'est à dire qu'il s'attend à retrouver un ou plusieurs d'entre eux satisfaits dans le rendu final mais que le choix des besoins qui seront implémentés nous revient.
+
+\subsubsection{Élement des planètes}\label{sfn_planet_elements}
+  Plusieurs suggestions d'éléments à ajouter aux planètes pour les complexifier ont été évoqué durant notre rendez-vous avec le client.
+\begin{itemize}
+    \item \textbf{Biomes} : Division de la planète en plusieurs "biomes" qui sont des environnements naturels différents, par exemple désert, toundra, jungle, etc... La génération de ces biomes peut être plus ou moins cohérente: complétement aléatoire, en fonction des biomes voisins ou en fonction d'autres paramètres comme la tectonique des plaques et le climat. 
+    \item \textbf{Nuages} : Génération de nuages autour de la planète, peut être approfondi en créant plusieurs type de nuages en fonction de la hauteur, avec différents niveaux de transparence.
+    \item \textbf{Rivières} : Génération de rivières ayant une certaine cohérence, origine en altitude, se jette dans une étendue d'eau, érosion.
+    \item Climat : Simulation d'un système climatique pour la planète, températures, vents, précipitations etc... Les autres points énumérés précedemment peuvent dépendre de ce point s'il est implémenté. Sa complexité peut varier en fonction du réalisme que l'on souhaitera lui donner.
+\end{itemize}
+\subsubsection{Format de sauvegarde}\label{sfn_save_format}
+ Le projet PdP 21 : Génération de planète procédurale étant réalisé simultanémment par deux groupes d'étudiants, il a été suggéré que nous choisissions un format de sauvegarde commun pour nos planètes. Le format souhaité de préférence par le client étant le format texte (.txt). 
+
+\section{Besoins non fonctionnels}\label{non_func_need}
+
+\subsection{Fluidité}\label{nfn_fluid}
+  Le client souhaite que l'utilisation du logiciel soit "raisonnablement" fluide, l'ordre de grandeur donné est de 0.5 seconde pour un zoom. De manière générale, plus le logiciel sera fluide plus cela sera bénéfique pour le client, mais des petits ralentissements ne sont pas dérangeant.\\
+(Nous testerons la fluidité de notre logiciel directment sur OpenGL)?
+
+\subsection{Portabilité}\label{nfn_port}
+ Il est souhaité que notre logiciel fonctionne sous Linux avec un besoin de configuration minime. La portabilité de notre logiciel sur d'autres environnement n'est pas demandée mais elle serait un point positif.
+
+\subsection{Mémoire}\label{nfn_mem}
+ Aucun contrainte liée à la mémoire n'as été soumise.
+
+\section{Diagramme de Gantt}
+    
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}
